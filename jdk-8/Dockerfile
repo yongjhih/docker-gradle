@@ -15,7 +15,7 @@ ENV COPY_REFERENCE_FILE_LOG $GRADLE_CONFIG/copy_reference_file.log
 
 
 RUN cd /usr/lib && \
-    curl -L $GRADLE_URL -o gradle-bin.zip && \
+    curl -fsSL $GRADLE_URL -o gradle-bin.zip && \
     unzip gradle-bin.zip && \
     ln -s "/usr/lib/gradle-${GRADLE_VERSION}/bin/gradle" /usr/bin/gradle && \
     rm gradle-bin.zip && \
