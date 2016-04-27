@@ -1,0 +1,26 @@
+language: bash
+services: docker
+
+env:
+  - VERSION=latest DOCKERDIR=8
+  - VERSION=6 DOCKERDIR=6
+  - VERSION=7 DOCKERDIR=7
+  - VERSION=8 DOCKERDIR=8
+  - VERSION=9 DOCKERDIR=9
+
+install:
+  - git clone https://github.com/docker-library/official-images.git ~/official-images
+
+before_script:
+  - env | sort
+  - image="yongjhih/gradle:$VERSION"
+  - dockerdir="${DOCKERDIR:-.}"
+
+script:
+  - docker build -t "$image" "$dockerdir"
+  - ~/official-images/test/run.sh "$image"
+
+after_script:
+  - docker images
+
+# vim:set et ts=2 sw=2:
