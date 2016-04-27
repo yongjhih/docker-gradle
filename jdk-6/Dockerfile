@@ -22,7 +22,7 @@ RUN cd /usr/lib && \
     mkdir -p /src
 
 WORKDIR /src
-ADD docker-entrypoint.sh
+ADD docker-entrypoint.sh /
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["gradle"]
