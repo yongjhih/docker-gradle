@@ -13,3 +13,17 @@ Generate gradle wrapper:
 ```sh
 docker run -it -v $(pwd):/src yongjhih/gradle gradle wrapper --gradle-version 2.13
 ```
+
+## Deploy
+
+```sh
+./generate-stackbrew-library.sh > /tmp/gradle
+cd ..
+git clone git@github.com:yongjhih/official-images.git
+cd official-images
+mv /tmp/gradle library/
+cd bashbrew
+./bashbrew.sh build --no-build gradle
+git commit -am 'Update gradle'
+git push origin HEAD:gradle
+```
