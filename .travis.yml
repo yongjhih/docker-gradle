@@ -2,11 +2,10 @@ language: bash
 services: docker
 
 env:
-  - VERSION=latest DOCKERDIR=8
-  - VERSION=6 DOCKERDIR=6
-  - VERSION=7 DOCKERDIR=7
-  - VERSION=8 DOCKERDIR=8
-  - VERSION=9 DOCKERDIR=9
+  - VERSION=jdk-6 DOCKERDIR=jdk-6
+  - VERSION=jdk-7 DOCKERDIR=jdk-7
+  - VERSION=jdk-8 DOCKERDIR=jdk-8
+  - VERSION=jdk-9 DOCKERDIR=jdk-9
 
 install:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
