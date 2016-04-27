@@ -19,7 +19,7 @@ RUN cd /usr/lib && \
     unzip gradle-bin.zip && \
     ln -s "/usr/lib/gradle-${GRADLE_VERSION}/bin/gradle" /usr/bin/gradle && \
     rm gradle-bin.zip && \
-    mkdir -p /src
+    mkdir -p /src $GRADLE_REF
 
 WORKDIR /src
 ADD docker-entrypoint.sh /
