@@ -14,6 +14,12 @@ Generate gradle wrapper:
 docker run -it -v $(pwd):/src yongjhih/gradle gradle wrapper --gradle-version 2.13
 ```
 
+Install gradle as a container:
+
+```sh
+curl -L https://github.com/yongjhih/docker-gradle/raw/master/gradle > ~/bin/gradle && chmod a+x gradle
+```
+
 ## Deploy
 
 ```sh
